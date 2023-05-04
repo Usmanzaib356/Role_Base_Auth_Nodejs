@@ -19,6 +19,4 @@ route.get("/products", verifytoken, (req, res) => {
 })
 
 
-
-
-module.exports = route
+module.exports = route;
