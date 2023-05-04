@@ -7,16 +7,16 @@ const verifyRole = require("./verifyRole")
 route.get("/all_data", verifytoken, verifyRole, (req, res) => {
 
     res.status(200).json({
-        DailyRevenue:"$1000",
-        NetProfit:"$200"
+        DailyRevenue: "$1000",
+        NetProfit: "$200"
     })
 
 })
 
 
- route.get("/products",verifytoken,(req,res)=>{
-      res.status(200).json({data:"Products"})
- })
+route.get("/products", verifytoken, (req, res) => {
+    res.status(200).json({ data: "Products" })
+})
 
 
 
