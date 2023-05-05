@@ -45,7 +45,7 @@ route.post("/signup", async (req, res) => {
         }
 
 
-        // check Secret KRy
+        // check Secret Key
         if (req.body.secret_key !== process.env.secret_key_of_dashboard) {
            return res.status(405).send("Secrect Key Incorrect")
         }
