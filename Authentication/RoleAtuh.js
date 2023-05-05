@@ -20,8 +20,6 @@ const userSchema = new mongoose.Schema({
 const userModel = new mongoose.model("users", userSchema)
 
 
-// apnadashboardhaiywr
-
 // Sign UP Route
 route.post("/signup", async (req, res) => {
 
