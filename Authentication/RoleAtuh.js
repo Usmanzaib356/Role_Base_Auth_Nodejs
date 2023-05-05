@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
 const userModel = new mongoose.model("users", userSchema)
 
 
-
+// apnadashboardhaiywr
 
 // Sign UP Route
 route.post("/signup", async (req, res) => {
@@ -40,9 +40,14 @@ route.post("/signup", async (req, res) => {
         if (!req.body.name ||
             !req.body.password ||
             !req.body.role ||
-            req.body.secret_key !== secret_key_dashboard
-        ) {
+            !req.body.secret_key) {
             return res.status(403).send("Invalid Request")
+        }
+
+
+        // check Secret KRy
+        if (req.body.secret_key !== process.env.secret_key_of_dashboard) {
+           return res.status(405).send("Secrect Key Incorrect")
         }
 
         // Check User Exist
