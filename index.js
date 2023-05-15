@@ -40,12 +40,7 @@ app.get("/", (req, res) => {
 const users = require("./Authentication/RoleAtuh")
 app.use(users)
 
-
-
-// All data Route
-const data = require("./DashBoard_Data/alldata")
-app.use(data)
-
+    
 
 
 // Server Started

@@ -24,8 +24,6 @@ const userModel = new mongoose.model("users", userSchema)
 route.post("/signup", async (req, res) => {
 
     try {
-
-
         const user = new userModel({
             name: req.body.name,
             password: req.body.password,
@@ -44,8 +42,8 @@ route.post("/signup", async (req, res) => {
 
 
         // check Secret Key
-        if (req.body.secret_key !== process.env.secret_key_of_dashboard) {
-           return res.status(405).send("Secrect Key Incorrect")
+        if (req.body.secret_key !== secret_key_dashboard) {
+            return res.status(405).send("Secrect Key Incorrect")
         }
 
         // Check User Exist
